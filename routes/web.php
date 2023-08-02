@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $data = 'first string in laravel';
+    $array = [
+        'key1' => 'value1',
+        'key2' => 'value2',
+        'key3' => 'value3',
+    ];
+    return view('home', compact('data', 'array'));
+})->name('home');
+Route::get('/link', function () {
+    $data = 'first string in laravel';
+    $array = [
+        'key1' => 'value1',
+        'key2' => 'value2',
+        'key3' => 'value3',
+    ];
+    return view('link', compact('data', 'array'));
+})->name('link');
